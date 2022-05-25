@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import UserContext from './Context/userContext';
@@ -8,10 +8,8 @@ import LoginPage from './Pages/LoginPage ';
 
 
 function App() {
-
-  const {user, setUser} = useState( JSON.parse(localStorage.getItem("user")) || null )
+  const { user, setUser } = useState( JSON.parse(localStorage.getItem("user")) || null );
   const [ verifyPage, setVerifyPage ] = useState(false);
-
 
   return (
     <div className="App">
