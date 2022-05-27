@@ -18,7 +18,7 @@ export default function RegisterPage( { verifyPage, setVerifyPage } ) {
     <div class="container-fluid p-0 m-0">
       <TopNavFront />
       <div class="d-flex flex-row justify-content-around align-items-center float fixed-bottom">
-        <img src={first_page} />
+        <img src={first_page} alt=""/>
 
         {email==='' && <ConfirmEmail companyData={companyData} setCompanyData={setCompanyData} setSetupAppPage={setSetupAppPage} /> }
 

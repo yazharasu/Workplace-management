@@ -20,7 +20,6 @@ export default function Post( { props } ) {
                     <p>{props.updatedAt}</p>
                 </div>
                 <p class="card-text">{props.description}</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
                 </>
             </div>
         </div>
