@@ -11,7 +11,7 @@ export default function Login() {
   const password = useRef();
 
   const loginHandler = async () => {
-    const res = await axios.patch( '/auth/login', { "username": email, "password": password} );
+    const res = await axios.patch( 'https://fa-intranet.herokuapp.com/auth/login', { "username": email, "password": password} );
 
     if ( res === "wrong username or password"){
       setLoginStatus("wrong username or password");

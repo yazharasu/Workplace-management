@@ -8,7 +8,7 @@ export default function ConfirmEmail( {companyData, setCompanyData, setSetupAppP
 
   const clickHandler = async (e) => {
     e.preventDefault();
-    const res = await axios.get( '/auth/checkEmail' , { "email" : email.current.value} )
+    const res = await axios.get( 'https://fa-intranet.herokuapp.com/auth/checkEmail' , { "email" : email.current.value} )
 
     if( res === "Not available") {
       setEmailCheck( "Not available" )

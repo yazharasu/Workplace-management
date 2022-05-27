@@ -16,7 +16,7 @@ export default function SetPassword( {companyData, setCompanyData, setVerifyPage
     setCompanyData(companyData)
 
     const registerCompany =  async () => {
-      await axios.post( 'auth/register', companyData )
+      await axios.post( 'https://fa-intranet.herokuapp.com/auth/register', companyData )
       .then( (res) => console.log(res))
     }
     registerCompany()

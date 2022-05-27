@@ -38,7 +38,7 @@ export default function VerifyOTP() {
     }
 
     const verifyOtpFn = async () => {
-      await axios.put( 'auth/verifyOTP' , { "email":"yazh.bis@gmail.com", "otp": otp } )
+      await axios.put( 'https://fa-intranet.herokuapp.com/auth/verifyOTP' , { "email":"yazh.bis@gmail.com", "otp": otp } )
       .then( (res) => {
         console.log(res.status)
         setVerifyStatus(res.status)
@@ -47,7 +47,7 @@ export default function VerifyOTP() {
   } 
  
   const resendOtpFn = async () => {
-    await axios.put( 'auth/resenOtp' , { "email" : "yazh.bis@gmail.com" } )
+    await axios.put( 'https://fa-intranet.herokuapp.com/auth/resenOtp' , { "email" : "yazh.bis@gmail.com" } )
     .then( (res) => {
       console.log(res.status)
       setVerifyStatus(res.status)

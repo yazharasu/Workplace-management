@@ -19,7 +19,7 @@ export default function HomePage() {
   useEffect( () => {
     const getAllAnnuc = async () => {
       const data = { "email": "yazh.bis@gmail.com" };
-      const allAnnuc = await axios.get( 'announcements/getAnnouncements', data );
+      const allAnnuc = await axios.get( 'https://fa-intranet.herokuapp.com/announcements/getAnnouncements', data );
       console.log(allAnnuc);
       setAllAnnuc( allAnnuc );
     }
@@ -27,7 +27,7 @@ export default function HomePage() {
   }, [])
 
   const logoutHandler = async () => {
-    await axios.patch( './auth/logout', { "email": user.email } );
+    await axios.patch( 'https://fa-intranet.herokuapp.com/auth/logout', { "email": user.email } );
     setUser( null );
     localStorage.removeItem("user");
   }
