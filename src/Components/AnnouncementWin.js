@@ -1,4 +1,4 @@
-import React, { useReducer, useState, useRef} from 'react'
+import React, { useState, useRef} from 'react'
 import axios from 'axios';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import './AnnouncementWin.css';

@@ -7,7 +7,7 @@ export default function Post( { props } ) {
 
   return (
     <div>
-        <div class="card" style="width: 18rem;">
+        <div class="card" style={{ "width": "18rem" }}>
             <div class="card-body">
                 <div class="text-success" style={{ "border-radius": "50%" , "width": "40px", "background-color":"#7afab4"}}> 
                     {props.username[0]}
