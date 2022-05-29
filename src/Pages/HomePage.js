@@ -27,7 +27,7 @@ export default function HomePage() {
   }, [])
 
   const logoutHandler = async () => {
-    await axios.patch( 'https://fa-intranet.herokuapp.com/auth/logout', { "email": user.email } );
+    await axios.patch( '/api/auth/logout', { "email": user.email } );
     setUser( null );
     localStorage.removeItem("user");
   }

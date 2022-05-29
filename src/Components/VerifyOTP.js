@@ -47,7 +47,7 @@ export default function VerifyOTP() {
   } 
  
   const resendOtpFn = async () => {
-    await axios.put( 'https://fa-intranet.herokuapp.com/auth/resenOtp' , { "email" : "yazh.bis@gmail.com" } )
+    await axios.put( '/api/auth/resenOtp' , { "email" : "yazh.bis@gmail.com" } )
     .then( (res) => {
       console.log(res.status)
       setVerifyStatus(res.status)

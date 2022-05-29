@@ -36,7 +36,7 @@ export default function AnnouncementWin( {setAnWin} ) {
             annoucDetails.subject = subject.current.value;
             annoucDetails.description = description.current.value;
 
-            await axios.post( 'https://fa-intranet.herokuapp.com/announcements/announcement', annoucDetails)
+            await axios.post( '/api/announcements/announcement', annoucDetails)
                 .then( (res) => {console.log(res.status); setAnnoucDetails({}) } )
 
         } else if (togglestatus===2) {
@@ -46,7 +46,7 @@ export default function AnnouncementWin( {setAnWin} ) {
             annoucDetails.time = time.current.value;
             annoucDetails.location = location.current.value;
             
-            await axios.post( 'https://fa-intranet.herokuapp.com/announcements/event', annoucDetails)
+            await axios.post( '/api/announcements/event', annoucDetails)
                 .then( (res) => {console.log(res.status); setAnnoucDetails({}) } )
 
         }else if (togglestatus===3) {
@@ -54,7 +54,7 @@ export default function AnnouncementWin( {setAnWin} ) {
             annoucDetails.description = description.current.value;
             annoucDetails.expDate = expDate.current.value;
 
-            await axios.post( 'https://fa-intranet.herokuapp.com/announcements/reminder', annoucDetails)
+            await axios.post( '/api/announcements/reminder', annoucDetails)
                 .then( (res) => {console.log(res.status); setAnnoucDetails({}) } )
         }
     }
