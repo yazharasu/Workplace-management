@@ -14,20 +14,20 @@ export default function AnnouncementWin( {setAnWin} ) {
     const nofityTo = useRef();
     const [annoucDetails, setAnnoucDetails] = useState({ });
     const [togglestatus, setToggleStatus] = useState(1);
-    const [radioOpt, _] = useState();
+    const [radioOpt, setRadioOpt] = useState();
 
     const toggle = ( stat ) => { 
         setToggleStatus(stat);
     };
 
     const radioEventHandler = (e) => {
-        setRadioOpt(e.target.value)
+        setRadioOpt(e.target.value);
         if (radioOpt == 1) {
-            annoucDetails.notifyTo = toAll;
+            annoucDetails.notifyTo = 'toAll';
         } else if (radioOpt == 2 || radioOpt == 3 ) {
             annoucDetails.notifyTo = nofityTo.current.value ;
         }
-    }
+    };
 
     const submitHandler = async (e) => {
         e.preventDefault();
@@ -59,7 +59,7 @@ export default function AnnouncementWin( {setAnWin} ) {
         }
     }
 
-  
+
   return (
     <div class="d-flex-column align-items-center py-3" style={{"width": "390px" , "height": "auto", "background-color": "white", }} >
 
