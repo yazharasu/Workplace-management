@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import './AnnouncementWin.css';
@@ -16,15 +16,16 @@ export default function AnnouncementWin( {setAnWin} ) {
     const [togglestatus, setToggleStatus] = useState(1);
     const [radioOpt, setRadioOpt] = useState();
 
+
     const toggle = ( stat ) => { 
         setToggleStatus(stat);
     };
 
     const radioEventHandler = (e) => {
         setRadioOpt(e.target.value);
-        if (radioOpt == 1) {
+        if (radioOpt === 1) {
             annoucDetails.notifyTo = 'toAll';
-        } else if (radioOpt == 2 || radioOpt == 3 ) {
+        } else if (radioOpt === 2 || radioOpt === 3 ) {
             annoucDetails.notifyTo = nofityTo.current.value ;
         }
     };
