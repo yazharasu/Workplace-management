@@ -1,14 +1,15 @@
-import React, {useRef, useState} from 'react'
+import React, { useRef, useState } from 'react'
 import axios from 'axios';
 
 
-export default function ConfirmEmail( {companyData, setCompanyData, setSetupAppPage} ) {
+export default function ConfirmEmail( { companyData, setCompanyData, setSetupAppPage } ) {
   const email = useRef(); 
   const [emailCheck, setEmailCheck] = useState( );
 
   const clickHandler = async (e) => {
     e.preventDefault();
     const res = await axios.get( '/api/auth/checkEmail' , { "email" : email.current.value} )
+    console.log( email.current.value);
 
     if( res === "Not available") {
       setEmailCheck( "Not available" )
@@ -16,7 +17,6 @@ export default function ConfirmEmail( {companyData, setCompanyData, setSetupAppP
       setCompanyData(companyData);
       setSetupAppPage(true);
       console.log(companyData);
-
     } else if( res === "Already available") {
       setEmailCheck( "Already available" )
     } else {
