@@ -19,7 +19,7 @@ export default function ConfirmEmail( { companyData, setCompanyData, setSetupApp
       console.log(companyData);
     } else if( res === "Already available") {
       setEmailCheck( "Already available" )
-    } else {
+    } else if( res === "Something went wrong."){
       setEmailCheck( "Something went wrong" )
     }
   }
