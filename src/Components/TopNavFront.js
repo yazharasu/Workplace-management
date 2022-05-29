@@ -8,7 +8,6 @@ export default function TopNavFront() {
     <nav class="navbar navbar-expand-lg shadow-sm mb-2 bg-body p-0">
     <div class="container-fluid ">
         <Link to="/" class="fw-bold nav-link text-success fs-5" href="#">INTRANET</Link>
-        
         <div class="d-flex flex-row align-items-center " style={{"color": "grey"}}>
             <Link to="/login" class="navbar-login px-5 text-success fw-bold nav-link" >Login</Link>
             <EmailIcon style={{"width": "20px"}}/>
@@ -18,8 +17,3 @@ export default function TopNavFront() {
     </nav>
     )
 }
-
-
-
-
-

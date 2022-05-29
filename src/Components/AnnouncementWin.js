@@ -1,25 +1,37 @@
-import React, { useState, useRef} from 'react'
+import React, { useState, useRef } from 'react'
 import axios from 'axios';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import './AnnouncementWin.css';
 
+
 export default function AnnouncementWin( {setAnWin} ) {
-    const subject = useRef()
-    const description = useRef()
-    const date = useRef(null)
-    const time = useRef(null)
-    const location = useRef(null)
-    const expDate = useRef()
-    const [annoucDetails, setAnnoucDetails] = useState({ })
+    const subject = useRef();
+    const description = useRef();
+    const date = useRef(null);
+    const time = useRef(null);
+    const location = useRef(null);
+    const expDate = useRef();
+    const nofityTo = useRef();
+    const [annoucDetails, setAnnoucDetails] = useState({ });
     const [togglestatus, setToggleStatus] = useState(1);
-    const [radioOpt, setRadioOpt] = useState();
+    const [radioOpt, _] = useState();
 
     const toggle = ( stat ) => { 
-        setToggleStatus(stat)
+        setToggleStatus(stat);
     };
+
+    const radioEventHandler = (e) => {
+        setRadioOpt(e.target.value)
+        if (radioOpt == 1) {
+            annoucDetails.notifyTo = toAll;
+        } else if (radioOpt == 2 || radioOpt == 3 ) {
+            annoucDetails.notifyTo = nofityTo.current.value ;
+        }
+    }
 
     const submitHandler = async (e) => {
         e.preventDefault();
+
         if (togglestatus===1) {
             annoucDetails.subject = subject.current.value;
             annoucDetails.description = description.current.value;
@@ -46,10 +58,7 @@ export default function AnnouncementWin( {setAnWin} ) {
                 .then( (res) => {console.log(res.status); setAnnoucDetails({}) } )
         }
     }
-    
-    const radioEventHandler = (e) => {
-        setRadioOpt(e.target.value)
-    }
+
   
   return (
     <div class="d-flex-column align-items-center py-3" style={{"width": "390px" , "height": "auto", "background-color": "white", }} >
@@ -131,7 +140,7 @@ export default function AnnouncementWin( {setAnWin} ) {
             { (radioOpt>1) &&
                 <div class="container-fluid p-0 m-0">
                     <div style={{"width": "390px"}} >
-                        <textarea class="form-control ps-1 text-secondary small" rows="2" id="anncDetails" ref={description} style={{"width": "350px", "font-size": "14px"}} placeholder="Enter email id's separated by camma" />
+                        <textarea class="form-control ps-1 text-secondary small" rows="2" id="anncDetails" ref={nofityTo} style={{"width": "350px", "font-size": "14px"}} placeholder="Enter email id's separated by camma" />
                     </div>
                 </div>
             }
