@@ -8,7 +8,7 @@ export default function ConfirmEmail( { companyData, setCompanyData, setSetupApp
 
   const clickHandler = async (e) => {
     e.preventDefault();
-    const res = await axios.get( '/auth/checkEmail' , { "email" : email.current.value} )
+    const res = await axios.get( '/api/auth/checkEmail' , { "email" : email.current.value} )
     console.log( res );
 
     if( res === "Not available") {
