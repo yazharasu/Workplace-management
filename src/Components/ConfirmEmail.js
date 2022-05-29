@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export default function ConfirmEmail( {companyData, setCompanyData, setSetupAppPage} ) {
   const email = useRef(); 
-  const { emailCheck, setEmailCheck } = useState( );
+  const [emailCheck, setEmailCheck] = useState( );
 
   const clickHandler = async (e) => {
     e.preventDefault();
@@ -19,7 +19,6 @@ export default function ConfirmEmail( {companyData, setCompanyData, setSetupAppP
 
     } else if( res === "Already available") {
       setEmailCheck( "Already available" )
-
     } else {
       setEmailCheck( "Something went wrong" )
     }
